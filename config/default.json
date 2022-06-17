@@ -1,4 +1,6 @@
 {
   "mongoURI": "mongodb+srv://saboor:saboor@cluster0.mpmdc.mongodb.net/?retryWrites=true&w=majority",
-  "jwtSecret": "mySecretKey"
+  "jwtSecret": "mySecretKey",
+  "githubClientId": "81f040377bdfa736b17f",
+  "githubClientSecret": "57dcea0e2993b1b44daed799dee2399be7d22688"
 }
