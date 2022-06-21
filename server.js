@@ -4,6 +4,7 @@ import users from "./routes/api/users.js";
 import auth from "./routes/api/auth.js";
 import profile from "./routes/api/profile.js";
 import posts from "./routes/api/posts.js";
+import cors from "cors";
 
 const app = express();
 
@@ -12,6 +13,13 @@ connectDB();
 
 // Init Middleware
 app.use(express.json({ extented: false }));
+const corsOptions = {
+  origin: "*",
+  credentials: true,
+  optionSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
 
 app.get("/", (req, res) => res.send("Api running"));
 

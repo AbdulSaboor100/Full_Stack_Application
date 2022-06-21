@@ -154,11 +154,10 @@ router.delete("/delete-comment/:post_id", authController, async (req, res) => {
     const comment = post.comments.find(
       (comment) => comment.user.toString() === req.user.id
     );
-    console.log(comment);
     if (!comment) {
       return res.status(400).json({ message: "Comment does not exits" });
     }
-    if (comment.user !== req.user.id) {
+    if (comment.user.toString() !== req.user.id) {
       return res.status(400).json({ message: "User not authoried" });
     }
     const removeIndex = post.comments
